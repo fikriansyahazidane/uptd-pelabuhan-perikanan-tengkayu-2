@@ -1,0 +1,483 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Waktu pembuatan: 19 Feb 2025 pada 11.24
+-- Versi server: 5.7.40-log
+-- Versi PHP: 7.4.33
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `sql_tengkayu2_dk`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `berita`
+--
+
+CREATE TABLE `berita` (
+  `id_berita` int(11) NOT NULL,
+  `judul` varchar(400) DEFAULT NULL,
+  `id_user` int(11) DEFAULT NULL,
+  `gambar` varchar(99) DEFAULT NULL,
+  `gambar2` varchar(100) DEFAULT NULL,
+  `gambar3` varchar(100) DEFAULT NULL,
+  `gambar4` varchar(100) DEFAULT NULL,
+  `gambar5` varchar(100) DEFAULT NULL,
+  `keyword` varchar(50) DEFAULT NULL,
+  `isi` text,
+  `tanggal_post` date DEFAULT NULL,
+  `status_berita` varchar(55) DEFAULT NULL,
+  `idkat` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `berita`
+--
+
+INSERT INTO `berita` (`id_berita`, `judul`, `id_user`, `gambar`, `gambar2`, `gambar3`, `gambar4`, `gambar5`, `keyword`, `isi`, `tanggal_post`, `status_berita`, `idkat`) VALUES
+(55, 'Pelabuhan Tengkayu II, Pusat Bisnis Perikanan di Kota Tarakan', 7, '8ebf33f70c2abf80febd1b1659350196.jpg', '72e3946d5b100a5e28bb678d88481f30.jpg', 'be57a7762e03356073c7564e42ff77e8.jpg', '', '', '', '<p>Berada di penghujung Jalan Gajah Mada, Kelurahan Karang Anyar Pantai Kecamatan Tarakan Barat, pelabuhan ini memiliki luas kawasan kepelabuhanan sekitar 5,5 hektare. Terdiri dari daratan dan perairan di bawah pengelolaan Unit Pelaksana Teknis (UPT) Pelabuhan Tengkayu II.<br />\r\n<br />\r\nBerdasarkan data dari UPT Pelabuhan Tengkayu II yang berada di DKP Kaltara, di pelabuhan ini juga dilakukan sejumlah pungutan dan pelayanan penerbitan perizinan tertentu. Seperti, pungutan retribusi kepelabuhanan, pelayanan penerbitan Surat Persetujuan Berlayar (SPB) kapal perikanan, penerbitan Sertifikasi Hasil Tangkapan Ikan (SHTI) khusus komoditi hasil perikanan (tangkap) yang akan diekspor ke Uni Eropa.<br />\r\n<br />\r\nDari pelayanan dan pungutan tersebut berhasil diperoleh PAD tercatat, pada 2018 mencapai Rp 2,028 miliar atau sedikit lebih tinggi dibanding tahun sebelumnya yang mencapai Rp 1,953 miliar dengan distribusi kontainer sebanyak 520 kontainer. PAD yang diperoleh tersebut juga diupayakan untuk ditingkatkan pada pengelolaannya ke depan.<br />\r\n-</p>\r\n', '2023-03-31', 'Publish', 7);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `download`
+--
+
+CREATE TABLE `download` (
+  `id_download` int(11) NOT NULL,
+  `judul` varchar(99) DEFAULT NULL,
+  `file` varchar(90) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `galeri`
+--
+
+CREATE TABLE `galeri` (
+  `id_galeri` int(11) NOT NULL,
+  `judul` varchar(400) DEFAULT NULL,
+  `gambar` varchar(99) DEFAULT NULL,
+  `status` varchar(99) DEFAULT NULL,
+  `tanggal` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `galeri`
+--
+
+INSERT INTO `galeri` (`id_galeri`, `judul`, `gambar`, `status`, `tanggal`) VALUES
+(72, 'Pelabuhan Tengkayu II, Pusat Bisnis Perikanan di Kota Tarakan', '8ebf33f70c2abf80febd1b1659350196.jpg', 'Publish', '2023-03-31'),
+(73, 'Pelabuhan Tengkayu II, Pusat Bisnis Perikanan di Kota Tarakan', '72e3946d5b100a5e28bb678d88481f30.jpg', 'Publish', '2023-03-31'),
+(74, 'Pelabuhan Tengkayu II, Pusat Bisnis Perikanan di Kota Tarakan', 'be57a7762e03356073c7564e42ff77e8.jpg', 'Publish', '2023-03-31');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `instagram_post`
+--
+
+CREATE TABLE `instagram_post` (
+  `id_post` int(11) NOT NULL,
+  `judul` varchar(99) DEFAULT NULL,
+  `link_ig` text,
+  `tanggal` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `instagram_post`
+--
+
+INSERT INTO `instagram_post` (`id_post`, `judul`, `link_ig`, `tanggal`) VALUES
+(14, 'Tes', '<blockquote class=\"instagram-media\" data-instgrm-permalink=\"https://www.instagram.com/dkp.kaltara\" data-instgrm-version=\"12\" style=\" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:undefinedpx;height:undefinedpx;max-height:100%; width:undefinedpx;\"><div style=\"padding:16px;\"> <a id=\"main_link\" href=\"dkp.kaltara\" style=\" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;\" target=\"_blank\"> <div style=\" display: flex; flex-direction: row; align-items: center;\"> <div style=\"background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;\"></div> <div style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content: center;\"> <div style=\" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;\"></div> <div style=\" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;\"></div></div></div><div style=\"padding: 19% 0;\"></div> <div style=\"display:block; height:50px; margin:0 auto 12px; width:50px;\"><svg width=\"50px\" height=\"50px\" viewBox=\"0 0 60 60\" version=\"1.1\" xmlns=\"https://www.w3.org/2000/svg\" xmlns:xlink=\"https://www.w3.org/1999/xlink\"><g stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"><g transform=\"translate(-511.000000, -20.000000)\" fill=\"#000000\"><g><path d=\"M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631\"></path></g></g></g></svg></div><div style=\"padding-top: 8px;\"> <div style=\" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;\"> View this post on Instagram</div></div><div style=\"padding: 12.5% 0;\"></div> <div style=\"display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;\"><div> <div style=\"background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);\"></div> <div style=\"background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;\"></div> <div style=\"background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);\"></div></div><div style=\"margin-left: 8px;\"> <div style=\" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;\"></div> <div style=\" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)\"></div></div><div style=\"margin-left: auto;\"> <div style=\" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);\"></div> <div style=\" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);\"></div> <div style=\" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);\"></div></div></div> <div style=\"display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;\"> <div style=\" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;\"></div> <div style=\" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;\"></div></div></a><p style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;\"><a href=\"dkp.kaltara\" style=\" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;\" target=\"_blank\">Shared post</a> on <time style=\" font-family:Arial,sans-serif; font-size:14px; line-height:17px;\">Time</time></p></div></blockquote><script src=\"https://www.instagram.com/embed.js\"></script><script type=\"text/javascript\" src=\"https://www.embedista.com/j/instagramfeed1707.js\"></script><div style=\"overflow: auto; position: absolute; height: 0pt; width: 0pt;\"><a href=\"https://www.embedista.com/instagramfeed\">Embed Instagram Post</a> Code Generator</div></div><style>.boxes3{height:175px;width:153px;} #n img{max-height:none!important;max-width:none!important;background:none!important} #inst i{max-height:none!important;max-width:none!important;background:none!important}</style></div>', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `jabatan`
+--
+
+CREATE TABLE `jabatan` (
+  `id_jabatan` int(11) NOT NULL,
+  `namajabatan` varchar(99) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `jabatan`
+--
+
+INSERT INTO `jabatan` (`id_jabatan`, `namajabatan`) VALUES
+(2, 'Kepala UPTD'),
+(34, 'Kepala Sub  Bagian  Perencanaan'),
+(35, 'Kepala Sub Bagian Tata Usaha'),
+(39, 'Analis Perencanaan'),
+(41, 'Pengadministrasi Umum'),
+(42, 'Pengadministrasi Perencanaan dan Program'),
+(44, 'Pengadministrasi Kepegawaian'),
+(46, 'Pengelola Barang Milik Negara'),
+(47, 'Kepala Seksi Pengembangan'),
+(49, 'Kepala Seksi Tata Operasional'),
+(50, 'Pengadministrsi Keuangan'),
+(51, 'Analis Pembangunan Pelabuhan Perikanan'),
+(52, 'Analis Sistem Informasi'),
+(53, 'Analis Kelautan dan Perikanan'),
+(54, 'Penagih Retribusi'),
+(55, 'Pengadministrsi Kedatangan dan Pemberangkatan Kapal'),
+(56, 'Syahbandar Pelabuhan Perikanan');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kategori`
+--
+
+CREATE TABLE `kategori` (
+  `idkat` int(11) NOT NULL,
+  `nmkat` varchar(99) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `kategori`
+--
+
+INSERT INTO `kategori` (`idkat`, `nmkat`) VALUES
+(7, 'Umum'),
+(11, 'Bidang');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `komentar`
+--
+
+CREATE TABLE `komentar` (
+  `id_komentar` int(11) NOT NULL,
+  `nama` varchar(99) DEFAULT NULL,
+  `email` varchar(99) DEFAULT NULL,
+  `nomorkontak` varchar(100) NOT NULL,
+  `subjek` text,
+  `tanggal_post` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `komentar`
+--
+
+INSERT INTO `komentar` (`id_komentar`, `nama`, `email`, `nomorkontak`, `subjek`, `tanggal_post`) VALUES
+(1, 'Gigiek', 'gigieksugiharto13@gmail.com', '081346018143', 'Selamat siang bapak ibu saya cuma ingin menyampaikan bahwa saya ingin melakukan pengaduan terhadap salah satu pegawai honour di pelabuhan perikanan tengkayu 2 prov kaltara atas nama dewi rahmawati ningsih yang telah berhutang ke saya tapi tidak ada itikad baik untuk mengembalikan.mohon yang bersangkutan untuk di tegur agar segera membayar karna saya ada bukti transfernya.terima kasih..', '2024-09-08');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `pengumuman`
+--
+
+CREATE TABLE `pengumuman` (
+  `id_pengumuman` int(100) NOT NULL,
+  `judul` varchar(500) DEFAULT NULL,
+  `file` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `sambutan`
+--
+
+CREATE TABLE `sambutan` (
+  `id_sambutan` int(20) NOT NULL,
+  `judul` varchar(400) NOT NULL,
+  `deskripsi` varchar(400) NOT NULL,
+  `foto` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `sambutan`
+--
+
+INSERT INTO `sambutan` (`id_sambutan`, `judul`, `deskripsi`, `foto`) VALUES
+(3, 'Selamat Datang Di Website UPTD Pelabuhan Perikanan Tengkayu II Provinsi Kalimantan Utara ', 'Website ini merupakan pusat informasi mengenai kegiatan, berita, pengumuman, laporan, informasi publik, saran dan aduan yang diselenggarakan oleh UPTD Pelabuhan Perikanan Tengkayu II  Provinsi Kalimantan Utara ', 'logokaltara.png');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `slider`
+--
+
+CREATE TABLE `slider` (
+  `id_slider` int(100) NOT NULL,
+  `foto` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `slider`
+--
+
+INSERT INTO `slider` (`id_slider`, `foto`) VALUES
+(6, '2024.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `struktural`
+--
+
+CREATE TABLE `struktural` (
+  `id_struktural` int(11) NOT NULL,
+  `nip` varchar(99) DEFAULT NULL,
+  `nama` varchar(99) DEFAULT NULL,
+  `jk` varchar(5) DEFAULT NULL,
+  `tempat_lahir` varchar(99) DEFAULT NULL,
+  `tanggal_lahir` date DEFAULT NULL,
+  `id_jabatan` int(30) DEFAULT NULL,
+  `pendakhir` varchar(99) DEFAULT NULL,
+  `gol` varchar(99) DEFAULT NULL,
+  `foto` varchar(99) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `struktural`
+--
+
+INSERT INTO `struktural` (`id_struktural`, `nip`, `nama`, `jk`, `tempat_lahir`, `tanggal_lahir`, `id_jabatan`, `pendakhir`, `gol`, `foto`) VALUES
+(22, '196906131999031010', 'BAHARUDDIN L S.E, M.S.P', 'L', 'Ujung Pandang', '1978-08-14', 2, 'Pasca Sarjana - S2', 'Pembina / IV.a', '804c38c52a6304ff47b8606ac90b0e32.jpg'),
+(42, '', 'NUR LAILA S.Hut., M.Si', 'M', '', '1981-07-27', 13, 'S1', 'IV/a', 'ad42d130f828238ea09667d57ae24d0b.jpg'),
+(83, '197405072007012016', 'SITI JULFAH SH', 'M', 'Tarakan', '1974-05-07', 35, 'Sarjana - S1', 'Penata / III.c', '466f0f38203ac6db1a6ad63db379723b.jpg'),
+(84, '197510232010011010', 'MUHAMMAD AYIT, SH', 'L', 'Tarakan', '1975-10-23', 47, 'Sarjana - S1', 'Penata TK.I / III.d', '458335e5d26458ea2dde4bf7eeb84356.JPG'),
+(85, '196507171989021004', 'NURSIDIK, SH', 'L', 'Brebes', '1965-07-17', 56, 'Sarjana - S1', 'Penata TK.I / III.d', '25be8fc1ff53ef9a763f8950a0726112.JPG'),
+(86, '198105222015031001', 'ARI RIYADI, S.St.Pi', 'L', 'Ciamis', '1981-05-22', 56, 'Sarjana -S1', 'Penata Muda TK.I / III.b', '09d464ada49a0d81ed33767c3313b183.JPG'),
+(87, '196912132002121006', 'BUSRI, S.Pd', 'L', 'Tarakan', '1969-12-13', 51, 'Sarjana - S1', 'Penta Muda / III.a', '4de84fc4b1d59f179fc111e0893e99a3.JPG'),
+(89, '198008172011011001', 'AGUS SUGIARTO, A.Md.', 'L', 'Samarinda', '1980-08-17', 46, 'Sarjana Muda - D3', 'Penata Muda / III.a', '329003b539b1f01937c5651ff2876f64.JPG'),
+(90, '199312082018022001', 'INTAN NABILLA SARI, S.Pi', 'M', 'Banjarmasin', '1993-12-08', 39, 'Sarjana - S1', 'Penata Muda TK.I / III.b', 'e9ad1186318a68c86bc66722419a01b4.JPG'),
+(91, '199406202020122018', 'PUTRI YUNITA LESTARI, S.Kom', 'M', 'Tarakan', '1994-06-20', 52, 'Sarjana - S1', 'Penata Muda / III.a', '173a73c1ac6eb56a5946fb575a0d3524.JPG'),
+(92, '198404042010011001', 'SAIFUL, SE', 'L', 'Tarakan', '1984-04-04', 52, 'Sarjana - S1', 'Penata Muda / III.a', '55816739b61cb8fa424b901c0ab70c52.jpeg'),
+(93, '197804232010011001', 'ALPIANSYAH', 'L', 'Tarakan', '1974-04-23', 54, 'SMA', 'Pengatur TK.I / II.d', '3429c8925939043ebbbb8dc7dad78a19.JPG'),
+(94, '198404152010011001', 'HAMKA', 'L', 'Barru', '1984-04-15', 55, 'SMA', 'Pengatur TK.I / II.d', 'd215a9b9244d644ab0d3f84c8112fc6e.png'),
+(95, '198711252015032003', 'HUTAPEA NOVAYANTI', 'M', 'Tarakan', '1987-11-25', 50, 'SMA', 'Pengatur Muda TK.I / II.b', 'fe9362176cb8ed75c220ec6a815c41a2.jpg'),
+(96, '197206232010011001', 'HERI TRIYANTO', 'L', 'Samarinda', '1972-06-23', 41, 'SMA', 'Pengatur Muda / II.a', '6bd00df37e1e6a7a61db6af3363644f7.JPG'),
+(97, '199612252022031007', 'SYAHRIL, S.Pd', 'L', 'Nunukan', '1996-12-25', 53, 'Sarjana - S1', 'Penata Muda / III.a', 'e7def48c129a1547f556cc0ded46f7c7.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
+--
+
+CREATE TABLE `user` (
+  `id_user` int(11) NOT NULL,
+  `nama` varchar(99) DEFAULT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(90) DEFAULT NULL,
+  `level` int(5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `level`) VALUES
+(4, 'Admin', 'admin2', '5ef31b114dc86e975ac1e0f0066c79fa', 1),
+(7, 'Admin Aptika', 'adminaptika', '$2y$10$R/OYamPwYSKK6BYi3J8vyuVVGyEMZDf01buEK505.t25UZfbL7NKi', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `video`
+--
+
+CREATE TABLE `video` (
+  `id_video` int(11) NOT NULL,
+  `judul` varchar(99) DEFAULT NULL,
+  `link_video` varchar(99) DEFAULT NULL,
+  `tanggal` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `video`
+--
+
+INSERT INTO `video` (`id_video`, `judul`, `link_video`, `tanggal`) VALUES
+(13, 'Senam Sehat Bersama', 'https://www.youtube.com/embed/LkG0UHj5wO8', '0000-00-00 00:00:00');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indeks untuk tabel `berita`
+--
+ALTER TABLE `berita`
+  ADD PRIMARY KEY (`id_berita`);
+
+--
+-- Indeks untuk tabel `download`
+--
+ALTER TABLE `download`
+  ADD PRIMARY KEY (`id_download`);
+
+--
+-- Indeks untuk tabel `galeri`
+--
+ALTER TABLE `galeri`
+  ADD PRIMARY KEY (`id_galeri`);
+
+--
+-- Indeks untuk tabel `instagram_post`
+--
+ALTER TABLE `instagram_post`
+  ADD PRIMARY KEY (`id_post`);
+
+--
+-- Indeks untuk tabel `jabatan`
+--
+ALTER TABLE `jabatan`
+  ADD PRIMARY KEY (`id_jabatan`);
+
+--
+-- Indeks untuk tabel `kategori`
+--
+ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`idkat`);
+
+--
+-- Indeks untuk tabel `komentar`
+--
+ALTER TABLE `komentar`
+  ADD PRIMARY KEY (`id_komentar`);
+
+--
+-- Indeks untuk tabel `pengumuman`
+--
+ALTER TABLE `pengumuman`
+  ADD PRIMARY KEY (`id_pengumuman`);
+
+--
+-- Indeks untuk tabel `sambutan`
+--
+ALTER TABLE `sambutan`
+  ADD PRIMARY KEY (`id_sambutan`);
+
+--
+-- Indeks untuk tabel `slider`
+--
+ALTER TABLE `slider`
+  ADD PRIMARY KEY (`id_slider`);
+
+--
+-- Indeks untuk tabel `struktural`
+--
+ALTER TABLE `struktural`
+  ADD PRIMARY KEY (`id_struktural`);
+
+--
+-- Indeks untuk tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- Indeks untuk tabel `video`
+--
+ALTER TABLE `video`
+  ADD PRIMARY KEY (`id_video`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `berita`
+--
+ALTER TABLE `berita`
+  MODIFY `id_berita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+
+--
+-- AUTO_INCREMENT untuk tabel `download`
+--
+ALTER TABLE `download`
+  MODIFY `id_download` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `galeri`
+--
+ALTER TABLE `galeri`
+  MODIFY `id_galeri` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+
+--
+-- AUTO_INCREMENT untuk tabel `instagram_post`
+--
+ALTER TABLE `instagram_post`
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT untuk tabel `jabatan`
+--
+ALTER TABLE `jabatan`
+  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+
+--
+-- AUTO_INCREMENT untuk tabel `kategori`
+--
+ALTER TABLE `kategori`
+  MODIFY `idkat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT untuk tabel `komentar`
+--
+ALTER TABLE `komentar`
+  MODIFY `id_komentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `pengumuman`
+--
+ALTER TABLE `pengumuman`
+  MODIFY `id_pengumuman` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `sambutan`
+--
+ALTER TABLE `sambutan`
+  MODIFY `id_sambutan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `slider`
+--
+ALTER TABLE `slider`
+  MODIFY `id_slider` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT untuk tabel `struktural`
+--
+ALTER TABLE `struktural`
+  MODIFY `id_struktural` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT untuk tabel `video`
+--
+ALTER TABLE `video`
+  MODIFY `id_video` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
